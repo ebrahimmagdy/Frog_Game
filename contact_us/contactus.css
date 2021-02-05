@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../images/frog.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.container{
+    margin: auto;
+    background-color: rgba(214, 208, 208,0.2);
+    width: 60%;
+    height: 500px;
+    margin-top: 75px;
+    position: relative; 
+    color: black;
+}
+
+.header{
+    padding-top: 50px;
+    text-align: center;
+}
+.header .headerParagraph{
+    font-size: 48px;
+    font-family: 'Lucida Sans';
+    text-transform: capitalize;
+}
+.header .headerMessage{
+    margin-top: 15px;
+    font-family:  sans-serif;
+}
+
+
+.divForm{
+    margin-top: 30px;
+    float: left;
+    padding-left: 200px;
+}
+
+
+.divForm label{
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.divForm input{
+    width: 420px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+.divForm textarea{
+    width: 420px;
+    height: 100px;
+}
+.submitBtn{
+    background-color:greenyellow;
+    margin-top: 10px;
+    font-family: 'Lucida Sans';
+}

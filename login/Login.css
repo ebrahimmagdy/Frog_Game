@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    background: url(../images/frog.jpg) no-repeat center center fixed;
+    background-size: cover;
+    opacity: .8;
+}
+
+section {
+    display: inline-block;
+    width: 40%;
+    height: 50%;
+    margin: 15% 30%;
+}
+
+.input {
+    padding: 5px;
+    width: 80%;
+    font-size: x-large;
+    border-radius: 20px;
+    border-color: green;
+    margin: 10px;
+}
+
+#login {
+    padding: 10px 20px;
+    margin: 10px;
+    background: green;
+    border-radius: 20px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+}
+
+#back {
+    padding: 20px 40px;
+    margin: 10px;
+    background:lightgreen;
+    border-radius: 35px;
+    font-size: x-large;
+    font-weight: bold;
+}

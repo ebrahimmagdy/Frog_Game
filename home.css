@@ -1,0 +1,70 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("frog.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.homeContainer {
+    margin: auto;
+    width: 60%;
+    height: 500px;
+    margin-top: 75px;
+    color: black;
+    padding-top: 20px;
+}
+
+.homeBtn {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    width: 280px;
+    color: rgb(240, 232, 217);
+    background-color: rgb(187, 218, 12);
+    border-radius: 15px;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.homeBtn:hover,
+.homeLinks a:hover {
+    background-color: rgb(243, 243, 64);
+    cursor: pointer;
+    color: rgb(122, 116, 116);
+}
+
+.homeLinks a {
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    width: 230px;
+    text-align: center;
+    font-family: monospace;
+    color: rgb(240, 232, 217);
+}
+
+.contactLink {
+    float: left;
+    background-color: rgb(187, 218, 12);
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.helpLink {
+    float: right;
+    background-color: rgb(187, 218, 12);
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.btnDiv {
+    margin-top: 35px;
+}

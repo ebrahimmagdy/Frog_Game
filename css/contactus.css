@@ -1,0 +1,127 @@
+
+*
+{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+	color:#6a6f8c;
+	background-image: url('../images/1264.jpg');
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+
+.container{
+	width:100%;
+	margin-left: 540px;
+	margin-top: 80px;
+	max-width:525px;
+	min-height:550px;
+	position:relative;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+
+}
+.main{
+    width:100%;
+	height: 550px;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:rgba(255, 255, 255, 0.6);
+	border-radius: 20px;
+}
+
+.header{
+    text-align: center;
+}
+.header .headerParagraph{
+    font-size: 48px;
+    font-family: 'Lucida Sans';
+    text-transform: capitalize;
+}
+.header .headerMessage{
+    margin-top: 15px;
+    font-family:  sans-serif;
+}
+
+
+.divForm{
+    margin-top: 30px;
+    float: left;
+}
+
+
+.divForm label{
+    color: #6a6f8c;
+	font-size:13px;
+    padding-top: 30px;
+}
+.divForm input {
+    width: 420px;
+    height: 35px;
+    margin-bottom: 10px;
+    border:none;
+	padding:0px 20px;
+	border-radius:25px;
+	box-shadow:0 20px 20px 0 rgba(71, 71, 71, 0.24),0 17px 50px 0 rgba(71, 71, 71, 0.19);
+}
+.divForm textarea{
+    width: 420px;
+    height: 100px;
+    border-radius:25px;
+
+}
+.submitBtn{
+	background:rgb(70, 203, 24);
+    margin-top: 20px;
+
+
+}
+.submitBtn:hover{
+    background-color: rgb(57, 158, 23);
+    color: rgb(255, 255, 255);
+    transition: 0.2s;
+}
+
+#frog1
+{
+    position: absolute;
+    top: 300px;
+    left: 1035px;
+    width: 200px;
+}
+#frog2
+{
+    position: absolute;
+    top: 380px;
+    left: 170px;
+    width: 140px;
+}
+
+#frog3
+{
+    position: absolute;
+    top: 470px;
+    left: 440px;
+    width: 100px;
+}
+#frog4
+{
+    position: absolute;
+    top: 300px;
+	left: 950px;
+	width: 350px;
+}
+#frog5
+{
+	position: absolute;
+    top: 120px;
+    left: 443px;
+    width: 150px;
+	filter: drop-shadow(5px 5px 10px black);
+	z-index: 1;
+}

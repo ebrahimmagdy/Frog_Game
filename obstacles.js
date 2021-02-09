@@ -27,7 +27,7 @@ class Obstacle{
     }
     move()
     {
-        setInterval(function(){
+        // setInterval(function(){
         
         if (this.x<600) {
             // document.write("hello")
@@ -39,7 +39,7 @@ class Obstacle{
             
         }
 
-        }, 3000);
+        // }, 3000);
     }
     
 }
@@ -72,14 +72,14 @@ createObstaclesObj();
 // for (let i = 0; i < carsArray.length; i++) {
     // carsArray[i].draw()
     setInterval(function(){
-        carsArray[1].draw()
+        // carsArray[0].draw()
 
-        carsArray[1].move()
+        carsArray[0].move()
         canvasObstacle.clearRect(0,0,600,600)
-        carsArray[1].draw()
+        carsArray[0].draw()
     
 
-        }, 3000);
+        }, 500);
     
     
     

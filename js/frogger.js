@@ -53,7 +53,10 @@ class Frogger
             }
         }
 
-        if(this.y < 0) Scored();
+        if(this.y < 0)
+        {
+            scored();
+        } 
 
     }
 
@@ -62,6 +65,7 @@ class Frogger
         ctx3.fillStyle = 'green';
         ctx3.fillRect(this.x, this.y, this.width, this.height);
     }
+
     jump()
     {
         console.log('jump');

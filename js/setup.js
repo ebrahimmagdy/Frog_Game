@@ -36,8 +36,12 @@ const particlesArray = [];
 const maxParticles = 300;
 const ripplesArray = [];
 const carsArray = [];
+<<<<<<< HEAD
 const logsArray = [];
 
 const backgroundForGame = new Image();
 backgroundForGame.src = '../images/GameBAckGround.png';
 
+=======
+const logsArray = [];
+>>>>>>> d1d041369848c5b12e509bb2213cffb4085d74b8

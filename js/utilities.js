@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 function animate(){
     ctx1.clearRect(0, 0, canvas.width, canvas.height);
     ctx2.clearRect(0, 0, canvas.width, canvas.height);    
-=======
-function animate()
-{
->>>>>>> d1d041369848c5b12e509bb2213cffb4085d74b8
     ctx3.clearRect(0, 0, canvas.width, canvas.height);
     ctx3.clearRect(0, 0, canvas.width, canvas.height);
     ctx5.clearRect(0, 0, canvas.width, canvas.height);

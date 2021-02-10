@@ -53,7 +53,9 @@ class Frogger
             }
         }
 
-        if(this.y < 0) Scored();
+        if(this.y < 0){
+            scored();
+        } 
 
     }
 

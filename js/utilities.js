@@ -1,5 +1,13 @@
 function animate(){
+    ctx1.clearRect(0, 0, canvas.width, canvas.height);
+    ctx2.clearRect(0, 0, canvas.width, canvas.height);    
     ctx3.clearRect(0, 0, canvas.width, canvas.height);
+    ctx3.clearRect(0, 0, canvas.width, canvas.height);
+    ctx5.clearRect(0, 0, canvas.width, canvas.height);
+    
+    handleRipples();
+    ctx2.drawImage(backgroundForGame, 0, 0, canvas.width, canvas.height);
+    handleParticles();
     frogger.draw();
     frogger.update();
     requestAnimationFrame(animate);
@@ -23,6 +31,6 @@ window.addEventListener('keyup', function(e){
 function scored(){
     score++;
     gameSpeed += 0.05;
-    frogger.x = canvas.wigth/2 - frogger.wigth/2;
+    frogger.x = canvas.width/2 - frogger.width/2;
     frogger.y = canvas.height - frogger.height - 40;
 }

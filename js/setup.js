@@ -46,3 +46,5 @@ froggerSprite.src = '../images/frog_spritesheet.png'
 const backgroundForGame = new Image();
 backgroundForGame.src = '../images/GameBAckGround.png';
 
+const collisions = new Image();
+collisions.src = '../images/collisions.png'

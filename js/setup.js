@@ -19,7 +19,7 @@ canvas4.width = 600;
 canvas4.height = 600;
 
 const canvas5 = document.getElementById('canvas5');
-const ctx5 = canvas4.getContext('2d');
+const ctx5 = canvas5.getContext('2d');
 canvas5.width = 600;
 canvas5.height = 600;
 
@@ -38,6 +38,11 @@ const ripplesArray = [];
 // const carsArray = [];
 // const logsArray = [];
 
+
+//images
+
+const froggerSprite = new Image();
+froggerSprite.src = '../images/frog_spritesheet.png'
 const backgroundForGame = new Image();
 backgroundForGame.src = '../images/GameBAckGround.png';
 

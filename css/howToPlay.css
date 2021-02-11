@@ -1,0 +1,42 @@
+body {
+    background: url(../images/1264.jpg) no-repeat center center fixed;
+    background-size: 100% 100%;
+    text-align: center;
+}
+
+h1 {
+    color:#F26739;
+    font: 50px 'Open Sans',sans-serif;
+    font-weight: bold;
+    text-shadow:20px 10px 10px black; 
+}
+
+pre {
+    color: gray;
+    margin-left: -65px;
+    font: 30px sans-serif;
+    font-weight: bold;
+    height: 70px;
+}
+
+#divForImg {
+    display: inline-block;
+    width: 600px;
+    height: auto;
+    background: rgb(255, 255, 255, .6);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#arrows {
+    width: 600px;
+    height: auto;
+}
+
+#frog4 {
+    position: absolute; 
+    top: 150px; 
+    left: 800px; 
+    width: 350px;
+} 
+

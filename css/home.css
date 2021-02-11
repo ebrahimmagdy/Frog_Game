@@ -1,0 +1,94 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    color:#6a6f8c;
+	background-image: url('../images/1264.jpg');
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+
+.homeContainer {
+    margin: auto;
+    width: 60%;
+    height: 500px;
+    margin-top: 75px;
+    color: black;
+    padding-top: 20px;
+}
+
+.homeBtn {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    width: 280px;
+    color: green;
+    background-color: (187, 218, 12);
+    border-radius: 15px;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.homeBtn:hover,
+.homeLinks a:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+    color: #fff;
+}
+
+.homeLinks a {
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    width: 230px;
+    text-align: center;
+    font-family: monospace;
+    background-color:white;
+    color: green;
+
+}
+
+.contactLink {
+    float: left;
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.helpLink {
+    float: right;
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.btnDiv {
+    margin-top: 35px;
+}
+#frog1
+{
+    position: absolute;
+    top: 300px;
+    left: 1035px;
+    width: 200px;
+}
+#frog2
+{
+    position: absolute;
+    top: 380px;
+    left: 130px;
+    width: 140px;
+}
+
+#frog3
+{
+    position: absolute;
+    top: 470px;
+    left: 600px;
+    width: 100px;
+}

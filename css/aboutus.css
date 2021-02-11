@@ -1,0 +1,38 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+	background-image: url('../images/aboutus.svg');
+	background-size: 110% 100%;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+
+.person{
+    background-color: #de611a ;
+    width: 400px;
+    margin-top: 12px;
+    border-radius: 45px;
+    height: 150px;
+
+}
+.samy , .ebrahim{
+    margin-left: 450px;
+}
+.personName{
+    text-align: center;
+    margin-top: -70px;
+}
+.info{
+    margin-left: 80px;
+    text-align: center;
+}
+img{
+margin: auto;
+border-radius: 50%;
+display: inline-block;
+}

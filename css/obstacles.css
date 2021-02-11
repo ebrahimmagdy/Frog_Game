@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 .wrapper
 {
     border: 5px solid black;
@@ -7,7 +10,7 @@
     width: 800px;
     height: 600px;
     transform: translate(-50%, -50%);
-    background: url('images/wallpaper.png');
+    background: url('../images/wallpaper.png');
 
 }
 .water{

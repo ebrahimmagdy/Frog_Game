@@ -2,17 +2,23 @@ function animate(){
     ctx1.clearRect(0, 0, canvas.width, canvas.height);
     ctx2.clearRect(0, 0, canvas.width, canvas.height);    
     ctx3.clearRect(0, 0, canvas.width, canvas.height);
-    ctx3.clearRect(0, 0, canvas.width, canvas.height);
+    ctx4.clearRect(0, 0, canvas.width, canvas.height);
     ctx5.clearRect(0, 0, canvas.width, canvas.height);
-    
+    canvasObstacle.clearRect(0,0,canvasObs.width,canvasObs.height);
+
     handleRipples();
-    ctx2.drawImage(backgroundForGame, 0, 0, canvas.width, canvas.height);
+    // ctx2.drawImage(backgroundForGame, 0, 0, canvas.width, canvas.height);
     handleParticles();
+    handleObstacle();
+
     frogger.draw();
     frogger.update();
+    
+    handleScoreBoard();
+
     requestAnimationFrame(animate);
 
-    handleScoreBoard();
+
 }
 
 animate();

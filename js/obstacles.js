@@ -1,11 +1,12 @@
-
 const canvasObs=document.getElementById("canvasObstacle");
 const canvasObstacle=canvasObs.getContext("2d");
 canvasObs.width=600;
 canvasObs.height=600;
 carsArray=[]
+logsArray=[]
 grid=80;
 gameSpeed=1
+var safe=false;
 
 
 turtleImg= document.getElementById("turtleImg");
@@ -51,7 +52,7 @@ class Obstacle{
 
     }
     update(){
-        this.x +=this.direction *2;
+        this.x +=this.direction * gameSpeed;
         if(this.direction >0){
             if(this.x > canvasObs.width){
                 this.x= 0 - canvasObs.width;
@@ -69,12 +70,12 @@ class Obstacle{
 function createObstaclesObj() {
     for (let i = 0; i <2; i++){
         let x=i*400;
-        carsArray.push(new Obstacle(x,105,160,60,-1,"turtle"));
+        logsArray.push(new Obstacle(x,105,160,60,-1,"turtle"));
 
     }
     for (let i = 0; i <2; i++){
         let x=i*400;
-        carsArray.push(new Obstacle(x,180,160,60,1,"wood"));
+        logsArray.push(new Obstacle(x,180,160,60,1,"wood"));
 
     }
 
@@ -98,13 +99,62 @@ function createObstaclesObj() {
     
 }
 createObstaclesObj();
+console.log(logsArray[0]);
 
 function handleObstacle(){
     for (let i = 0; i < carsArray.length; i++) {
         carsArray[i].update();
         carsArray[i].draw();       
     }
+    for (let i = 0; i < logsArray.length; i++) {
+        logsArray[i].update();
+        logsArray[i].draw();       
+    }
+
+    if(frogger.y <250 && frogger.y >100){
+        // frogger.draw();
+
+
+        for (let i = 0; i < logsArray.length; i++) {
+            console.log("outside");
+            if(collision(frogger,logsArray[i])){
+                console.log("inside condistion");
+                frogger.x +=logsArray[i].direction ;
+                safe=true;
+                console.log(safe);
+                // frogger.update();
+                // frogger.draw();
+
+            }            
+        }
+        if(!safe){
+            console.log("inside not safe");
+            for (let index = 0; index < 30; index++) {
+                ripplesArray.unshift(new Particle(frogger.x , frogger.y));                 
+            }
+            resetGame();
+        }
+
+    }
+
 }
+function collision(first,second){
+    return!(first.x > second.x +second.width ||
+            first.x+first.width < second.x ||
+            first.y>second.y+second.height ||
+            first.y+first.height<second.y
+            );
+}
+
+function resetGame(){
+    frogger.x = canvas.width/2 - frogger.width/2;
+    frogger.y = canvas.height - frogger.height - 40;
+    score=0;
+    gameSpeed=1;
+    collisionsCount++;
+
+}
+
 
 // function animate(){
 //     canvasObstacle.clearRect(0,0,canvasObs.width,canvasObs.height);

@@ -25,18 +25,18 @@ canvas5.height = 600;
 
 
 // global variables
-const grid = 80;
+// const grid = 80;
 let keys = [];
 let score = 0;
 let collisionsCount = 0;
 let frame = 0;
-let gameSpeed = 1;
+// let gameSpeed = 1;
 
 const particlesArray = [];
 const maxParticles = 300;
 const ripplesArray = [];
-const carsArray = [];
-const logsArray = [];
+// const carsArray = [];
+// const logsArray = [];
 
 const backgroundForGame = new Image();
 backgroundForGame.src = '../images/GameBAckGround.png';

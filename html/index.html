@@ -5,10 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frogger</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/obstacles.css">
+
 </head>
 <body>
     <div class="wrapper">
+
+        <img src="../images/water.png" alt="water" class="water">
+        <img src="../images/turtle.png" alt="" id="turtleImg" style="display: none;" >
+        <img src="../images/wood.png" alt="" id="wood" style="display: none;">
+        <img src="../images/truckCar.png" alt="" id="truckCar" style="display: none;">
+        <img src="../images/redCar.png" alt="" id="redCar" style="display: none;">
+        <img src="../images/yellowCar.jpg" alt="" id="yellowCar" style="display: none;">
+
+        
+        <canvas id="canvasObstacle"></canvas>
         <canvas id="canvas1"></canvas>
         <canvas id="canvas2"></canvas>
         <canvas id="canvas3"></canvas>
@@ -16,6 +27,10 @@
         <canvas id="canvas5"></canvas>
     </div>
 
+
+
+    
+    <script src="../js/obstacles.js"></script>
     <script src="../js/setup.js"></script>
     <script src="../js/frogger.js"></script>
     <script src="../js/particles.js"></script>

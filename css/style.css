@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 .wrapper
 {
     border: 5px solid black;
@@ -7,7 +10,15 @@
     width: 600px;
     height: 600px;
     transform: translate(-50%, -50%);
-    background: url('../images/background.png');
+    /* background-color: rgb(100, 148, 237,0.8); */
+    background: url('../images/water3.png');
+    background-repeat: no-repeat;
+
+}
+.water{
+    margin-top: 95px;
+    width: 100%;
+    height: 375px;
 }
 canvas
 {
@@ -16,4 +27,21 @@ canvas
     left: 0;
     width: 100%;
     height: 100%;
+}
+.bottomPage img{
+    width: 100%;
+    height: 110px;
+    position: absolute;
+    bottom: 0;
+}
+/* .centerPage img{
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+
+} */
+.topPage img{
+    width: 100%;
+    height: 110px;
 }

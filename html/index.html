@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frogger</title>
-    <link rel="stylesheet" href="../css/obstacles.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
 
-        <img src="../images/water.png" alt="water" class="water">
+        <div class="topPage">
+            <img src="../images/grass.jpg" alt="" id="topImg">
+        </div>
+
+        <!-- <div class="centerPage" >
+            <img src="" alt="">
+        </div> -->
+
+        <div class="bottomPage">
+            <img src="../images/sand.jpg" alt="" id="bottomImg">
+        </div>
+
+        <!-- <img src="../images/water.png" alt="water" class="water"> -->
         <img src="../images/turtle.png" alt="" id="turtleImg" style="display: none;" >
         <img src="../images/wood.png" alt="" id="wood" style="display: none;">
         <img src="../images/truckCar.png" alt="" id="truckCar" style="display: none;">
@@ -37,5 +49,6 @@
     <!--<script src="../js/ripples.js"></script>
     <script src="../js/obstacles.js"></script> -->
     <script src="../js/utilities.js"></script>
+
 </body>
 </html>

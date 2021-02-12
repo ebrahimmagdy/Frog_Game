@@ -39,6 +39,8 @@ const ripplesArray = [];
 // const logsArray = [];
 
 
+
+
 //images
 
 const froggerSprite = new Image();

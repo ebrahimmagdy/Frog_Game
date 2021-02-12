@@ -28,7 +28,7 @@ bottomImg=document.getElementById("bottomImg");
 
 
 
-class Obstacle {
+class Obstacle2 {
     constructor(x, y, width, height, direction, type) {
 
         this.x = x;
@@ -73,63 +73,63 @@ class Obstacle {
 function createObstaclesObjLevel0() {
     for (let i = 0; i < 2; i++) {
         let x = i * 600;
-        logsArray.push(new Obstacle(x, 105, 160, 60, 1, "wood"));
+        logsArray.push(new Obstacle2(x, 105, 160, 60, 1, "wood"));
 
     }
     for (let i = 0; i < 2; i++) {
         let x = i * 400;
-        logsArray.push(new Obstacle(x, 180, 160, 60, -1, "turtle"));
+        logsArray.push(new Obstacle2(x, 180, 160, 60, -1, "turtle"));
 
     }
 
     for (let i = 0; i < 2; i++) {
         let x = i * 300;
-        logsArray.push(new Obstacle(x, 270, 160, 60, 1, "wood"));
+        logsArray.push(new Obstacle2(x, 270, 160, 60, 1, "wood"));
 
     }
     for (let i = 0; i < 2; i++) {
         let x = i * 400;
-        logsArray.push(new Obstacle(x, 345, 160, 60, -1, "turtle"));
+        logsArray.push(new Obstacle2(x, 345, 160, 60, -1, "turtle"));
 
     }
 
     for (let i = 0; i < 2; i++) {
         let x = i * 400;
-        logsArray.push(new Obstacle(x, 420, 160, 60, 1, "wood"));
+        logsArray.push(new Obstacle2(x, 420, 160, 60, 1, "wood"));
 
     }
 
 
 }
-createObstaclesObjLevel0();
+createObstaclesObj();
 
 
-function createObstaclesObjLevel1() {
+function createObstaclesObj() {
     for (let i = 0; i < 2; i++) {
         let x = i * 600;
-        carsArray.push(new Obstacle(x, 105, 160, 60, 1, "redCar"));
+        carsArray.push(new Obstacle2(x, 105, 160, 60, 1, "redCar"));
 
     }
     for (let i = 0; i < 2; i++) {
         let x = i * 400;
-        carsArray.push(new Obstacle(x, 180, 160, 60, -1, "truckCar"));
+        carsArray.push(new Obstacle2(x, 180, 160, 60, -1, "truckCar"));
 
     }
 
     for (let i = 0; i < 2; i++) {
         let x = i * 300;
-        carsArray.push(new Obstacle(x, 270, 160, 60, 1, "redCar"));
+        carsArray.push(new Obstacle2(x, 270, 160, 60, 1, "redCar"));
 
     }
     for (let i = 0; i < 2; i++) {
         let x = i * 400;
-        carsArray.push(new Obstacle(x, 345, 160, 60, -1, "truckCar"));
+        carsArray.push(new Obstacle2(x, 345, 160, 60, -1, "truckCar"));
 
     }
 
     for (let i = 0; i < 2; i++) {
         let x = i * 400;
-        carsArray.push(new Obstacle(x, 420, 160, 60, 1, "redCar"));
+        carsArray.push(new Obstacle2(x, 420, 160, 60, 1, "redCar"));
 
     }
 
@@ -138,7 +138,6 @@ function createObstaclesObjLevel1() {
 
 
 
-createObstaclesObjLevel1();
 
 
 
@@ -148,62 +147,51 @@ createObstaclesObjLevel1();
 
 
 
-function handleObstacle() {
- 
-    if(gameLevels==1){
-        wrapperImg.style.background="wood";
-        topImg.src="../images/sand.jpg";
-        bottomImg.src="../images/grass.jpg";
-        // logsArray=[];
-        // carsArray=[];
-        // createObstaclesObjLevel1();
-        for (let i = 0; i < carsArray.length; i++) {
-            carsArray[i].update();
-            carsArray[i].draw();
-        }
+
+
+
+function handleObstacle2() {
+   
+
+    for (let i = 0; i < carsArray.length; i++) {
+        carsArray[i].update();
+        carsArray[i].draw();
     }
-   
-   
-    
+    for (let i = 0; i < logsArray.length; i++) {
+        logsArray[i].update();
+        logsArray[i].draw();
+    }
+    //car collision
+    // for (let i = 0; i < carsArray.length; i++) {
+    //     if (collision(frogger, carsArray[i])) {
+    //         console.log("collision here");
+    //         ctx4.drawImage(collisions, 0, 100, 100, 100, frogger.x, frogger.y, 70, 70)
+    //         resetGame();
+    //     }
+    // }
+//250 100
+    if (frogger.y < 500 && frogger.y > 50) {
+        safe = false;
 
-    if(gameLevels==0){
         for (let i = 0; i < logsArray.length; i++) {
-            logsArray[i].update();
-            logsArray[i].draw();
-        }
-        if (frogger.y < 500 && frogger.y > 50) {
-            safe = false;
-    
-            for (let i = 0; i < logsArray.length; i++) {
-                if (collision(frogger, logsArray[i])) {
-                    safe = true;
-    
-                    if (frogger.x > 0 && frogger.x + frogger.width < canvasObs.width) {
-                        frogger.x += logsArray[i].direction;
-                    }
-    
-                }
-            }
-            if (!safe) {
-                
-                ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x, frogger.y, 100, 100);
-    
-                resetGame();
-            }
-    
-        }
-    }
-    if(gameLevels==1){
+            if (collision(frogger, logsArray[i])) {
+                safe = true;
 
-        for (let i = 0; i < carsArray.length; i++) {
-            if (collision(frogger, carsArray[i])) {
-                console.log("collision here");
-                ctx4.drawImage(collisions, 0, 100, 100, 100, frogger.x, frogger.y, 70, 70)
-                resetGame();
+                if (frogger.x > 0 && frogger.x + frogger.width < canvasObs.width) {
+                    frogger.x += logsArray[i].direction;
+
+                }
+
             }
         }
+        if (!safe) {
+            
+            ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x, frogger.y, 100, 100);
+
+            resetGame();
+        }
+
     }
-   
 
 }
 
@@ -218,12 +206,9 @@ function collision(first, second) {
 function resetGame() {
     frogger.x = canvas.width / 2 - frogger.width / 2;
     frogger.y = canvas.height - frogger.height - 40;
-    if(gameLevels==0){
-        score = 0;
-    }
+    score = 0;
     gameSpeed = 1;
     collisionsCount++;
-
 }
 
 

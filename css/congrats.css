@@ -1,0 +1,10 @@
+body{
+    background-image: url("../images/congrats2.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    margin: auto;
+}
+.frog{
+    text-align: center;
+}

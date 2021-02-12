@@ -1,13 +1,12 @@
 function animate() {
     ctx1.clearRect(0, 0, canvas.width, canvas.height);
-    ctx2.clearRect(0, 0, canvas.width, canvas.height);
-    ctx3.clearRect(0, 0, canvas.width, canvas.height);
-    ctx4.clearRect(0, 0, canvas.width, canvas.height);
-    ctx5.clearRect(0, 0, canvas.width, canvas.height);
+    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+    ctx3.clearRect(0, 0, canvas3.width, canvas3.height);
+    ctx4.clearRect(0, 0, canvas4.width, canvas4.height); //car collesion
+    ctx5.clearRect(0, 0, canvas5.width, canvas5.height);
     canvasObstacle.clearRect(0, 0, canvasObs.width, canvasObs.height);
 
-    // handleRipples();
-    // ctx2.drawImage(backgroundForGame, 0, 0, canvas.width, canvas.height);
+    handleRipples();
     handleParticles();
     handleObstacle();
 
@@ -17,8 +16,6 @@ function animate() {
     handleScoreBoard();
 
     requestAnimationFrame(animate);
-
-
 }
 
 animate();
@@ -39,9 +36,14 @@ window.addEventListener('keyup', function(e) {
 
 function scored() {
     score++;
+    gameLevels++;
     gameSpeed += 0.05;
     frogger.x = canvas.width / 2 - frogger.width / 2;
     frogger.y = canvas.height - frogger.height - 40;
+
+    if(gameLevels===3){
+        alert("Game Finish");
+    }
 }
 
 function handleScoreBoard() {
@@ -55,3 +57,4 @@ function handleScoreBoard() {
     ctx4.strokeText('Collisions: ' + collisionsCount, 10, 175);
     ctx4.strokeText('Game Speed ' + gameSpeed.toFixed(1), 10, 195);
 }
+

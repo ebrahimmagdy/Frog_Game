@@ -5,6 +5,11 @@ canvasObs.width = 600;
 canvasObs.height = 600;
 carsArray = []
 logsArray = []
+
+carsArrayN = []
+logsArrayN = []
+
+
 grid = 80;
 gameSpeed = 1
 var safe = false;
@@ -22,6 +27,7 @@ yellowCar = document.getElementById("yellowCar");
 wrapperImg=document.getElementById("wrapper");
 topImg=document.getElementById("topImg");
 bottomImg=document.getElementById("bottomImg");
+centerImg=document.getElementById("centerImg");
 
 
 
@@ -102,8 +108,6 @@ function createObstaclesObjLevel0() {
 
 }
 createObstaclesObjLevel0();
-
-
 function createObstaclesObjLevel1() {
     for (let i = 0; i < 2; i++) {
         let x = i * 600;
@@ -135,14 +139,42 @@ function createObstaclesObjLevel1() {
 
 
 }
-
-
-
 createObstaclesObjLevel1();
 
+function createObstaclesObjLeve2() {
+    for (let i = 0; i < 2; i++) {
+        let x = i * 600;
+        logsArrayN.push(new Obstacle(x, 105, 160, 60, -1, "turtle"));
+
+    }
+    for (let i = 0; i < 2; i++) {
+        let x = i * 400;
+        logsArrayN.push(new Obstacle(x, 180, 160, 60, 1, "wood"));
+
+    }
+
+    for (let i = 0; i < 2; i++) {
+        let x = i * 300;
+        carsArrayN.push(new Obstacle(x, 270, 160, 60, -1, "truckCar"));
+
+    }
+    for (let i = 0; i < 2; i++) {
+        let x = i * 400;
+        carsArrayN.push(new Obstacle(x, 345, 160, 60, 1, "redCar"));
+
+    }
+
+    for (let i = 0; i < 2; i++) {
+        let x = i * 400;
+        carsArrayN.push(new Obstacle(x, 420, 160, 60, -1, "truckCar"));
+
+    }
 
 
+}
 
+
+createObstaclesObjLeve2();
 
 
 
@@ -150,27 +182,42 @@ createObstaclesObjLevel1();
 
 function handleObstacle() {
  
-    if(gameLevels==1){
-        wrapperImg.style.background="wood";
-        topImg.src="../images/sand.jpg";
-        bottomImg.src="../images/grass.jpg";
-        // logsArray=[];
-        // carsArray=[];
-        // createObstaclesObjLevel1();
-        for (let i = 0; i < carsArray.length; i++) {
-            carsArray[i].update();
-            carsArray[i].draw();
-        }
-    }
-   
-   
-    
 
     if(gameLevels==0){
         for (let i = 0; i < logsArray.length; i++) {
             logsArray[i].update();
             logsArray[i].draw();
         }
+    }
+    else if(gameLevels==1){
+        topImg.src="../images/sand.jpg";
+        centerImg.src="../images/level2.png";
+        bottomImg.src="../images/grass.jpg";
+        for (let i = 0; i < carsArray.length; i++) {
+            carsArray[i].update();
+            carsArray[i].draw();
+        }
+    }
+    else if(gameLevels==2){
+        topImg.src="../images/sand.jpg";
+        centerImg.src="../images/level3.png";
+        bottomImg.src="../images/grass.jpg";
+        for (let i = 0; i < carsArrayN.length; i++) {
+            carsArrayN[i].update();
+            carsArrayN[i].draw();
+            
+        }
+        for (let i = 0; i < logsArrayN.length; i++) {
+            logsArrayN[i].update();
+            logsArrayN[i].draw();
+        }
+    }
+
+   
+    
+
+    if(gameLevels==0){
+      
         if (frogger.y < 500 && frogger.y > 50) {
             safe = false;
     
@@ -193,7 +240,7 @@ function handleObstacle() {
     
         }
     }
-    if(gameLevels==1){
+    else if(gameLevels==1){
 
         for (let i = 0; i < carsArray.length; i++) {
             if (collision(frogger, carsArray[i])) {
@@ -202,6 +249,37 @@ function handleObstacle() {
                 resetGame();
             }
         }
+    }
+    else if(gameLevels==2){
+        if (frogger.y < 250 && frogger.y > 100) {
+            safe = false;
+    
+            for (let i = 0; i < logsArrayN.length; i++) {
+                if (collision(frogger, logsArrayN[i])) {
+                    safe = true;
+    
+                    if (frogger.x > 0 && frogger.x + frogger.width < canvasObs.width) {
+                        frogger.x += logsArrayN[i].direction;
+                    }
+    
+                }
+            }
+            if (!safe) {
+                
+                ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x, frogger.y, 100, 100);
+    
+                resetGame();
+            }
+    
+        }
+        for (let i = 0; i < carsArrayN.length; i++) {
+            if (collision(frogger, carsArrayN[i])) {
+                console.log("collision here");
+                ctx4.drawImage(collisions, 0, 100, 100, 100, frogger.x, frogger.y, 70, 70)
+                resetGame();
+            }
+        }
+
     }
    
 

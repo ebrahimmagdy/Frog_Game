@@ -30,11 +30,12 @@ let keys = [];
 let score = 0;
 let collisionsCount = 0;
 let frame = 0;
+let freeze = false;
 // let gameSpeed = 1;
+let particlesArray = [];
+let ripplesArray = [];
 
-const particlesArray = [];
 const maxParticles = 300;
-const ripplesArray = [];
 // const carsArray = [];
 // const logsArray = [];
 

@@ -15,24 +15,30 @@ function animate() {
 
     handleScoreBoard();
 
-    requestAnimationFrame(animate);
+    if(!freeze){
+        requestAnimationFrame(animate);
+    }
 }
 
-animate();
+while(!freeze){
+    animate();
+}
 
-window.addEventListener('keydown', function(e) {
-    keys = [];
-    keys[e.keyCode] = true;
-    if (keys[37] || keys[38] || keys[39] || keys[40]) {
-        frogger.jump();
-    }
-});
-
-window.addEventListener('keyup', function(e) {
-    delete keys[e.keyCode];
-    frogger.moving = false;
-    frogger.frameX = 0;
-});
+if(!freeze){
+    window.addEventListener('keydown', function(e) {
+        keys = [];
+        keys[e.keyCode] = true;
+        if (keys[37] || keys[38] || keys[39] || keys[40]) {
+            frogger.jump();
+        }
+    });
+    
+    window.addEventListener('keyup', function(e) {
+        delete keys[e.keyCode];
+        frogger.moving = false;
+        frogger.frameX = 0;
+    });
+}
 
 function scored() {
     score++;

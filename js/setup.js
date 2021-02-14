@@ -23,6 +23,31 @@ const ctx5 = canvas5.getContext('2d');
 canvas5.width = 600;
 canvas5.height = 600;
 
+//obstacles
+const canvasObs = document.getElementById("canvasObstacle");
+const canvasObstacle = canvasObs.getContext("2d");
+canvasObs.width = 600;
+canvasObs.height = 600;
+
+
+let turtleImg = document.getElementById("turtleImg");
+let wood = document.getElementById("wood");
+
+let redCar = document.getElementById("redCar");
+let truckCar = document.getElementById("truckCar");
+
+let wrapperImg=document.getElementById("wrapper");
+let topImg=document.getElementById("topImg");
+let bottomImg=document.getElementById("bottomImg");
+let centerImg=document.getElementById("centerImg");
+
+let carsArray = [];
+let logsArray = [];
+
+let carsArrayN = [];
+let logsArrayN = [];
+//obstacles
+
 
 // global variables
 // const grid = 80;
@@ -30,11 +55,20 @@ let keys = [];
 let score = 0;
 let collisionsCount = 0;
 let frame = 0;
-// let gameSpeed = 1;
+let freeze = false;
+let gameSpeed = 1;
+let particlesArray = [];
+let ripplesArray = [];
 
-const particlesArray = [];
+
+
+
+let grid = 80;
+let safe = false;
+let gameLevels=0;
+
+
 const maxParticles = 300;
-const ripplesArray = [];
 // const carsArray = [];
 // const logsArray = [];
 
@@ -45,8 +79,8 @@ const ripplesArray = [];
 
 const froggerSprite = new Image();
 froggerSprite.src = '../images/frog_spritesheet.png'
-const backgroundForGame = new Image();
-backgroundForGame.src = '../images/GameBAckGround.png';
+// const backgroundForGame = new Image();
+// backgroundForGame.src = '../images/GameBAckGround.png';
 
 const collisions = new Image();
 collisions.src = '../images/collisions.png'

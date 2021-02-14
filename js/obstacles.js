@@ -1,39 +1,3 @@
-
-const canvasObs = document.getElementById("canvasObstacle");
-const canvasObstacle = canvasObs.getContext("2d");
-canvasObs.width = 600;
-canvasObs.height = 600;
-carsArray = []
-logsArray = []
-
-carsArrayN = []
-logsArrayN = []
-
-
-grid = 80;
-gameSpeed = 1
-var safe = false;
-var gameLevels=0;
-
-turtleImg = document.getElementById("turtleImg");
-wood = document.getElementById("wood");
-
-redCar = document.getElementById("redCar");
-truckCar = document.getElementById("truckCar");
-yellowCar = document.getElementById("yellowCar");
-
-
-
-wrapperImg=document.getElementById("wrapper");
-topImg=document.getElementById("topImg");
-bottomImg=document.getElementById("bottomImg");
-centerImg=document.getElementById("centerImg");
-
-
-
-
-
-
 class Obstacle {
     constructor(x, y, width, height, direction, type) {
 
@@ -64,125 +28,54 @@ class Obstacle {
         this.x += this.direction * gameSpeed;
         if (this.direction > 0) {
             if (this.x > canvasObs.width) {
-                this.x = 0 - canvasObs.width;
+                this.x = 0 - this.width;
             }
         } else {
-            if (this.x < 0 - canvasObs.width) {
+            if (this.x + this.width < 0) {
                 this.x = canvasObs.width;
             }
         }
     }
-
-
 }
 
+function fillObstacles(arr, type, y, direction){
+    for (let i = 0; i < 2; i++) {
+        let x = (i * (canvasObs.width / 2) + 50) + (Math.random() * ((canvasObs.width / 2) - 160));
+        arr.push(new Obstacle(x, y, 160, 60, direction, type));
+
+    }
+}
+
+let waterArray = ["wood", "turtle", "wood", "turtle", "wood"];
+let landArray = ["redCar", "truckCar", "redCar", "truckCar", "redCar"];
+let dimentionArray = [105, 180, 270, 345, 420];
+let direction = [1, -1, 1, -1, 1];
+
 function createObstaclesObjLevel0() {
-    for (let i = 0; i < 2; i++) {
-        let x = i * 600;
-        logsArray.push(new Obstacle(x, 105, 160, 60, 1, "wood"));
-
+    for(let i = 0; i < 5; i++){
+        fillObstacles(logsArray, waterArray[i], dimentionArray[i], direction[i]);
     }
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        logsArray.push(new Obstacle(x, 180, 160, 60, -1, "turtle"));
-
-    }
-
-    for (let i = 0; i < 2; i++) {
-        let x = i * 300;
-        logsArray.push(new Obstacle(x, 270, 160, 60, 1, "wood"));
-
-    }
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        logsArray.push(new Obstacle(x, 345, 160, 60, -1, "turtle"));
-
-    }
-
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        logsArray.push(new Obstacle(x, 420, 160, 60, 1, "wood"));
-
-    }
-
-
 }
 createObstaclesObjLevel0();
 function createObstaclesObjLevel1() {
-    for (let i = 0; i < 2; i++) {
-        let x = i * 600;
-        carsArray.push(new Obstacle(x, 105, 160, 60, 1, "redCar"));
-
+    for(let i = 0; i < 5; i++){
+        fillObstacles(carsArray, landArray[i], dimentionArray[i], direction[i]);
     }
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        carsArray.push(new Obstacle(x, 180, 160, 60, -1, "truckCar"));
-
-    }
-
-    for (let i = 0; i < 2; i++) {
-        let x = i * 300;
-        carsArray.push(new Obstacle(x, 270, 160, 60, 1, "redCar"));
-
-    }
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        carsArray.push(new Obstacle(x, 345, 160, 60, -1, "truckCar"));
-
-    }
-
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        carsArray.push(new Obstacle(x, 420, 160, 60, 1, "redCar"));
-
-    }
-
-
 }
 createObstaclesObjLevel1();
 
 function createObstaclesObjLeve2() {
-    for (let i = 0; i < 2; i++) {
-        let x = i * 600;
-        logsArrayN.push(new Obstacle(x, 105, 160, 60, -1, "turtle"));
-
-    }
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        logsArrayN.push(new Obstacle(x, 180, 160, 60, 1, "wood"));
-
-    }
-
-    for (let i = 0; i < 2; i++) {
-        let x = i * 300;
-        carsArrayN.push(new Obstacle(x, 270, 160, 60, -1, "truckCar"));
-
-    }
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        carsArrayN.push(new Obstacle(x, 345, 160, 60, 1, "redCar"));
-
-    }
-
-    for (let i = 0; i < 2; i++) {
-        let x = i * 400;
-        carsArrayN.push(new Obstacle(x, 420, 160, 60, -1, "truckCar"));
-
-    }
-
-
+    fillObstacles(logsArrayN, waterArray[1], dimentionArray[0], direction[1]);
+    fillObstacles(logsArrayN, waterArray[0], dimentionArray[1], direction[0]);
+    fillObstacles(carsArrayN, landArray[1], dimentionArray[2], direction[1]);
+    fillObstacles(carsArrayN, landArray[0], dimentionArray[3], direction[0]);
+    fillObstacles(carsArrayN, landArray[1], dimentionArray[4], direction[1]);
+    
 }
-
 
 createObstaclesObjLeve2();
 
-
-
-
-
 function handleObstacle() {
- 
-
     if(gameLevels==0){
         for (let i = 0; i < logsArray.length; i++) {
             logsArray[i].update();
@@ -213,9 +106,6 @@ function handleObstacle() {
         }
     }
 
-   
-    
-
     if(gameLevels==0){
       
         if (frogger.y < 500 && frogger.y > 50) {
@@ -232,10 +122,9 @@ function handleObstacle() {
                 }
             }
             if (!safe) {
-                
-                ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x, frogger.y, 100, 100);
-    
-                resetGame();
+                ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x - 25, frogger.y - 25, 100, 100);
+                freeze = true;
+                setTimeout(function(){resetGame();}, 500);
             }
     
         }
@@ -246,7 +135,8 @@ function handleObstacle() {
             if (collision(frogger, carsArray[i])) {
                 console.log("collision here");
                 ctx4.drawImage(collisions, 0, 100, 100, 100, frogger.x, frogger.y, 70, 70)
-                resetGame();
+                freeze = true;
+                setTimeout(function(){resetGame();}, 500);
             }
         }
     }
@@ -267,8 +157,8 @@ function handleObstacle() {
             if (!safe) {
                 
                 ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x, frogger.y, 100, 100);
-    
-                resetGame();
+                freeze = true;
+                setTimeout(function(){resetGame();}, 500);
             }
     
         }
@@ -276,7 +166,8 @@ function handleObstacle() {
             if (collision(frogger, carsArrayN[i])) {
                 console.log("collision here");
                 ctx4.drawImage(collisions, 0, 100, 100, 100, frogger.x, frogger.y, 70, 70)
-                resetGame();
+                freeze = true;
+                setTimeout(function(){resetGame();}, 500);
             }
         }
 
@@ -284,6 +175,7 @@ function handleObstacle() {
    
 
 }
+
 
 function collision(first, second) {
     return !(first.x > second.x + second.width ||
@@ -299,9 +191,8 @@ function resetGame() {
     if(gameLevels==0){
         score = 0;
     }
-    gameSpeed = 1;
     collisionsCount++;
-
+    freeze = false;
 }
 
 

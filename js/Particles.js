@@ -25,25 +25,26 @@ class Particle {
         }
     }
     drawRipple(){
-        ctx3.fillStyle = 'rgba(255, 255, 255, ' + this.opacity + ')';
+    //    ctx3.fillStyle = 'rgba(255, 255, 255, ' + this.opacity + ')';
         ctx3.beginPath();
         ctx3.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        ctx3.fill();
+        ctx3.strokeStyle = 'rgba(255, 255, 255, ' + this.opacity + ')';
+        ctx3.stroke();
         ctx3.closePath();
     }
     ripple(){
-        if(this.radius < 50){
-            this.radius += 0.7;
-            this.x -= 0.03;
-            this.y -= 0.03;
+        if(this.radius < 100){
+            this.radius += .5;
+            //this.x -= 0.03;
+            //this.y -= 0.03;
         }
         if(this.opacity > 0){
-            this.opacity -= 0.02;
+            this.opacity -= 0.01;
         }
     }
 }
 
-function handleParticles() {
+function walkingOnLand(){
     for(let i = 0; i < particlesArray.length; i++){
         particlesArray[i].update();
         particlesArray[i].draw();
@@ -53,25 +54,51 @@ function handleParticles() {
             particlesArray.pop();
         }
     }
-    if((keys[37] || keys[38] || keys[39] || keys[40]) && frogger.y > 250 && particlesArray.length < maxParticles + 10){
+    if((keys[37] || keys[38] || keys[39] || keys[40])){
         for(let i = 0; i < 10; i++){
             particlesArray.unshift(new Particle(frogger.x, frogger.y));
         }       
     }
 }
-function handleRipples() {
+
+function walkingOnWater(){
     for(let i = 0; i < ripplesArray.length; i++){
         ripplesArray[i].ripple();
         ripplesArray[i].drawRipple();
     }
-    if(ripplesArray.length > 20){
+    if(ripplesArray.length > 10){
         for(let i = 0; i < 5; i++){
             ripplesArray.pop();
         }
     }
-    if((keys[37] || keys[38] || keys[39] || keys[40]) && frogger.y < 250 && frogger.y > 100){
-        for(let i = 0; i < 20; i++){
+    if((keys[37] || keys[38] || keys[39] || keys[40])){
+        for(let i = 0; i < 2; i++){
             ripplesArray.unshift(new Particle(frogger.x, frogger.y));
         }       
+    } 
+}
+
+function handleParticles() {
+    if(frogger.y > 500 || frogger.y < 100 || gameLevels == 1){
+        walkingOnLand();
+    }else if(gameLevels == 2){
+        if(frogger.y > 250){
+            walkingOnLand();
+        }
+    }else{
+        particlesArray = [];
+    }
+}
+
+
+function handleRipples() {
+    if(gameLevels == 0 && frogger.y < 500 && frogger.y > 100){
+        walkingOnWater();
+    }else if(gameLevels == 2){
+        if(frogger.y < 250 && frogger.y > 100){
+            walkingOnWater();  
+        }
+    }else{
+        ripplesArray = [];
     }   
 }

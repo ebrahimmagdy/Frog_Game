@@ -188,8 +188,16 @@ function collision(first, second) {
 function resetGame() {
     frogger.x = canvas.width / 2 - frogger.width / 2;
     frogger.y = canvas.height - frogger.height - 40;
-    if(gameLevels==0){
-        score = 0;
+    // if(gameLevels==0){
+    //     score = 0;
+    // }
+    // gameSpeed = 1;
+    if(score>0)
+    {
+        score--;
+    }
+    else{
+        score=0;
     }
     collisionsCount++;
     freeze = false;

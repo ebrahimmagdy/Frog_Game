@@ -6,9 +6,15 @@ function animate() {
     ctx5.clearRect(0, 0, canvas5.width, canvas5.height);
     canvasObstacle.clearRect(0, 0, canvasObs.width, canvasObs.height);
 
-    handleRipples();
+    // handleRipples();
     handleParticles();
     handleObstacle();
+    // handelCoins()
+    
+
+
+
+
 
     if(!freeze){
         frogger.draw();

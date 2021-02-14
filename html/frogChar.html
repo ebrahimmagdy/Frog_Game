@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters</title>
+    <link rel="stylesheet" href="../css/frogChar.css">
+</head>
+
+<body>
+    <!-- <img  src="../images/characters.jpg" usemap="#image-map" >
+
+<map name="image-map">
+    <area target="" alt="green" title="green" href="index.html" coords="2069,2787,887,1170" shape="rect">
+    <area target="" alt="blue" title="blue" href="index.html" coords="3516,2795,2361,1173" shape="rect">
+    <area target="" alt="gold" title="gold" href="index.html" coords="5016,2784,3856,1178" shape="rect">
+</map> -->
+<div><button id="back" onclick="document.location='../html/home.html'"></button></div>
+    <div>
+        <button id="frog-green"></button>
+        <button id="frog-blue"></button>
+        <button id="frog-gold"></button>
+       
+    </div>
+    
+    <script>
+        document.getElementById("frog-green").addEventListener("click", function() 
+        {
+            localStorage.setItem("frogs-image", '../images/frogs-green.png');
+            window.location.href = '../html/index.html';
+        });
+
+        document.getElementById("frog-blue").addEventListener("click", function() 
+        {
+            localStorage.setItem("frogs-image", '../images/frogs-blue.png');
+            window.location.href = '../html/index.html';
+        });
+
+        document.getElementById("frog-gold").addEventListener("click", function() 
+        {
+            localStorage.setItem("frogs-image", '../images/frogs-gold.png');
+            window.location.href = '../html/index.html';
+        });
+    </script>
+
+</body>
+
+</html>

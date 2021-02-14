@@ -43,8 +43,12 @@ const ripplesArray = [];
 
 //images
 
-const froggerSprite = new Image();
-froggerSprite.src = '../images/frog_spritesheet.png'
+ const froggerSprite = new Image();
+ froggerSprite.src = localStorage.getItem("frogs-image");
+
+
+
+
 const backgroundForGame = new Image();
 backgroundForGame.src = '../images/GameBAckGround.png';
 

@@ -46,11 +46,6 @@ function fillObstacles(arr, type, y, direction){
     }
 }
 
-let waterArray = ["wood", "turtle", "wood", "turtle", "wood"];
-let landArray = ["redCar", "truckCar", "redCar", "truckCar", "redCar"];
-let dimentionArray = [105, 180, 270, 345, 420];
-let direction = [1, -1, 1, -1, 1];
-
 function createObstaclesObjLevel0() {
     for(let i = 0; i < 5; i++){
         fillObstacles(logsArray, waterArray[i], dimentionArray[i], direction[i]);
@@ -188,8 +183,16 @@ function collision(first, second) {
 function resetGame() {
     frogger.x = canvas.width / 2 - frogger.width / 2;
     frogger.y = canvas.height - frogger.height - 40;
-    if(gameLevels==0){
-        score = 0;
+    // if(gameLevels==0){
+    //     score = 0;
+    // }
+    // gameSpeed = 1;
+    if(score>0)
+    {
+        score--;
+    }
+    else{
+        score=0;
     }
     collisionsCount++;
     freeze = false;

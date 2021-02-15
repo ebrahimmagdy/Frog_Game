@@ -46,6 +46,11 @@ let logsArray = [];
 
 let carsArrayN = [];
 let logsArrayN = [];
+
+let waterArray = ["wood", "turtle", "wood", "turtle", "wood"];
+let landArray = ["redCar", "truckCar", "redCar", "truckCar", "redCar"];
+let dimentionArray = [105, 180, 270, 345, 420];
+let direction = [1, -1, 1, -1, 1];
 //obstacles
 
 

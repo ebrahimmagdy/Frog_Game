@@ -58,9 +58,17 @@ function handleScoreBoard() {
     ctx4.fillStyle = 'black';
     ctx4.strokeStyle = 'black';
     ctx4.font = '15px verdana';
-    ctx4.strokeText('Level', 265, 15);
+    ctx4.strokeText('Level', 500, 15);
     ctx4.font = '60px verdana';
-    ctx4.strokeText(gameLevels+1, 270, 65);
+    ctx4.strokeText(gameLevels+1, 500, 65);
+    
+    ctx4.fillStyle = 'black';
+    ctx4.strokeStyle = 'black';
+    ctx4.font = '15px verdana';
+    ctx4.strokeText('Score', 50, 15);
+    ctx4.font = '60px verdana';
+    ctx4.strokeText(score, 50, 65);
+
   
 }
 

@@ -39,7 +39,7 @@ window.addEventListener('keyup', function(e) {
 
 function scored() {
     gameLevels++;
-    gameSpeed += 3.5;
+    gameSpeed += 2.5;
     frogger.x = canvas.width / 2 - frogger.width / 2;
     frogger.y = canvas.height - frogger.height - 40;
 

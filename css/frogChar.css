@@ -1,0 +1,46 @@
+body
+{
+	color:#6a6f8c;
+	background-image: url('../images/characters.jpg');
+    background-size: 100% 100%;
+
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	font:600 16px/18px 'Open Sans',sans-serif;
+
+}
+
+button
+{
+    border:none;
+    position: relative;
+    display: inline-block;
+}
+#frog-green
+{
+	margin: 13% 0% 0% 15.5%;
+    padding: 11% 9%;
+    opacity: 0;
+}
+
+#frog-blue
+{
+	margin-left: 6.5%;
+    padding: 11% 9%;
+    opacity: 0;
+}
+
+#frog-gold
+{
+	margin-left: 6.5%;
+    padding: 11% 9%;
+    opacity: 0;
+}
+
+#back
+{
+    margin-top: 2.5%;
+    margin-left: 0.5%;
+    padding: 2.5% 6%;
+    opacity: 0;
+}

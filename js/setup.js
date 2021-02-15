@@ -77,10 +77,14 @@ const maxParticles = 300;
 
 //images
 
-const froggerSprite = new Image();
-froggerSprite.src = '../images/frog_spritesheet.png'
-// const backgroundForGame = new Image();
-// backgroundForGame.src = '../images/GameBAckGround.png';
+ const froggerSprite = new Image();
+ froggerSprite.src = localStorage.getItem("frogs-image");
+
+
+
+
+//const backgroundForGame = new Image();
+//backgroundForGame.src = '../images/GameBAckGround.png';
 
 const collisions = new Image();
 collisions.src = '../images/collisions.png'

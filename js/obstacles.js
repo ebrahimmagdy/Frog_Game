@@ -116,8 +116,8 @@ function handleObstacle() {
             if (!safe) {
                 ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x - 25, frogger.y - 25, 100, 100);
                 freeze = true;
-                collisionsCount++;
-                chance--;
+                collisionsCount += 1;
+                chance -= 1;
                 //resetGame();
 
                 setTimeout(function(){resetGame();}, 500);
@@ -132,8 +132,8 @@ function handleObstacle() {
                 console.log("collision here");
                 ctx4.drawImage(collisions, 0, 100, 100, 100, frogger.x, frogger.y, 70, 70)
                 freeze = true;
-                collisionsCount++;
-                chance--;
+                collisionsCount += 1;
+                chance -= 1;
                 //resetGame();
 
                 setTimeout(function(){resetGame();}, 500);
@@ -155,13 +155,12 @@ function handleObstacle() {
                 }
             }
             if (!safe) {
-                
                 ctx4.drawImage(collisions, 0, 0, 100, 100, frogger.x, frogger.y, 100, 100);
                 freeze = true;
-                collisionsCount++;
-                chance--;
+                collisionsCount += 1;
+                chance -= 1;
                 //resetGame();
-
+                
                 setTimeout(function(){resetGame();}, 500);
             }
     
@@ -171,8 +170,8 @@ function handleObstacle() {
                 console.log("collision here");
                 ctx4.drawImage(collisions, 0, 100, 100, 100, frogger.x, frogger.y, 70, 70)
                 freeze = true;
-                collisionsCount++;
-                chance--;
+                collisionsCount += 1;
+                chance -= 1;
                 //resetGame();
                 setTimeout(function(){resetGame();}, 500);
             }

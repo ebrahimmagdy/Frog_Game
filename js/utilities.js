@@ -10,15 +10,13 @@ function animate() {
 
     // handleRipples();
     handleParticles();
-    handleObstacle();
     // handelCoins()
     
 
 
 
-
-
     if(!freeze){
+        handleObstacle();
         frogger.draw();
         frogger.update();
     }
@@ -112,11 +110,10 @@ function resetGame() {
     //     score=0;
     // }
     
-    if(collisionsCount===5)
+    if(chance===0)
     {
         location.href = 'gameOver.html'; 
     }
-    score = lastScore;
-    collisionsCount++;
     freeze = false;
+    score = lastScore;
 }

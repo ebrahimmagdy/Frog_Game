@@ -14,23 +14,26 @@ body
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 
-
 .login-wrap
 {
-	width:100%;
+	/* width:100%;
 	margin-left: 540px;
-	margin-top: 80px;
+	margin-top: 80px;*/
 	max-width:525px;
-	min-height:550px;
-	position:relative;
+	min-height:550px; 
+	margin-left:auto;
+    margin-right:auto;
+	margin-top: 3%;
+    width:600px;
+	position: relative;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
 	width:100%;
-	height: 550px;
+	height: 570px;
 	position:absolute;
 	padding:90px 70px 50px 70px;
-	background:rgba(255, 255, 255, 0.6);
+	background:rgba(255, 255, 255, 0.7);
 	border-radius: 20px;
 }
 
@@ -116,7 +119,7 @@ body
 	transform:rotate(0);
 }
 
-
+/* 
 #frog1
 {
     position: absolute;
@@ -138,31 +141,26 @@ body
     top: 470px;
     left: 440px;
     width: 100px;
-}
+} */
 #frog4
 {
     position: absolute;
-    top: 300px;
-	left: 950px;
+    top: 350px;
+	left: 1150px;
 	width: 350px;
 }
 #frog5
 {
 	position: absolute;
-    top: 120px;
-    left: 443px;
+	margin-left:-20%;
+	margin-top: 6%;
+
     width: 150px;
 	filter: drop-shadow(5px 5px 10px black);
 	z-index: 1;
 }
-#error_message
-{
-	background:#fff;
-	border:1px dotted red;
-	margin-bottom:1em;
-	padding-left:0;
-	padding-right:0;
-	padding-top:4px;
-	text-align:center;
-	width:99%;
-}
+
+::placeholder { 
+	color: red;
+	opacity: .7; 
+  }

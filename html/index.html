@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Frogger</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="icon" href="http://pngimg.com/uploads/frog/frog_PNG3843.png" type="image/png">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frog Game</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" href="http://pngimg.com/uploads/frog/frog_PNG3843.png" type="image/png">
+    
+</head>
 
-    </head>
-    <body>
-        <div class="wrapper" id="wrapper">
+<body>
+    <img src="../images/frogGif4.gif" id="frog4">
+    <form action="home.html">
+        <div class="login-wrap">
+            <img src="../images/frogGif5.png" id="frog5">
+            <div class="login-html">
+                
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label  class="label">Email Address</label>
+                            <input id="emailIn" type="email" class="input" >
+                        </div>
+                        <div class="group">
+                            <label  class="label">Password</label>
+                            <input id="passIn" type="password" class="input">
+                        </div>
+                        <div class="group">
+                            <input  id = "signInBtn" type="submit" class="button" value="Login" >
+                        </div>
+                
+                    </div>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label  class="label">Email Address</label>
+                            <input id="emailUp" type="text" class="input" >
+                        </div>
+                        <div class="group">
+                            <label  class="label">Password</label>
+                            <input id="passUp" type="password" class="input"  >
+                        </div>
+                        <div class="group">
+                            <label  class="label">Repeat Password</label>
+                            <input id="repPass" type="password" class="input" >
+                        </div>
 
-            <div class="topPage">
-                <img src="../images/grass.jpg" alt="" id="topImg">
+                        <div class="group">
+                            <input  id = "signUpBtn" type="submit" class="button" value="Sign Up">
+                        </div>
+
+                        <li class="errors" style='display:none'>
+                            <ul id="error-messages" ></ul>
+                        </li>
+                    
+                    </div>
+                </div>
             </div>
-
-            <div class="centerPage" >
-                <img src="../images/water.png" alt="" id="centerImg">
-            </div>
-
-            <div class="bottomPage">
-                <img src="../images/sand.jpg" alt="" id="bottomImg">
-            </div>
-
-            <!-- <img src="../images/water.png" alt="water" class="water"> -->
-            <img src="../images/turtle.png" alt="" id="turtleImg" style="display: none;" >
-            <img src="../images/wood.png" alt="" id="wood" style="display: none;">
-            <img src="../images/truckCar.png" alt="" id="truckCar" style="display: none;">
-            <img src="../images/redCar.png" alt="" id="redCar" style="display: none;">
-            <img src="../images/yellowCar.jpg" alt="" id="yellowCar" style="display: none;">
-
-
-            <canvas id="canvasObstacle"></canvas>
-            <canvas id="coinCanvas"></canvas>
-
-            <canvas id="canvas1"></canvas>
-            <canvas id="canvas2"></canvas>
-            <canvas id="canvas3"></canvas>
-            <canvas id="canvas4"></canvas>
-            <canvas id="canvas5"></canvas>
         </div>
+    </form>
+    <script src="../js/Login.js"></script>
+</body>
 
-        <script src="../js/setup.js"></script>
-        <script src="../js/frogger.js"></script>
-        <script src="../js/obstacles.js"></script>
-        <script src="../js/particles.js"></script>
-        <script src="../js/coins.js"></script> 
-        <script src="../js/utilities.js"></script>
-
-    </body>
 </html>

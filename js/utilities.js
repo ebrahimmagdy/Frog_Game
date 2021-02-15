@@ -111,6 +111,11 @@ function resetGame() {
     // else{
     //     score=0;
     // }
+    
+    if(collisionsCount===5)
+    {
+        location.href = 'gameOver.html'; 
+    }
     score = lastScore;
     collisionsCount++;
     freeze = false;

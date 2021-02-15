@@ -78,6 +78,13 @@ function handleScoreBoard() {
     ctx4.strokeText('Score', 50, 15);
     ctx4.font = '60px verdana';
     ctx4.strokeText(score, 50, 65);
+
+    ctx4.fillStyle = 'black';
+    ctx4.strokeStyle = 'black';
+    ctx4.font = '15px verdana';
+    ctx4.strokeText('chance', 260, 15);
+    ctx4.font = '60px verdana';
+    ctx4.strokeText(chance, 260, 65);
 }
 
 function collision(first, second) {

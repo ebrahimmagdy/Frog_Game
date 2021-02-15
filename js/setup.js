@@ -54,12 +54,12 @@ let logsArrayN = [];
 let keys = [];
 let score = 0;
 let collisionsCount = 0;
+let chance=5;
 let frame = 0;
 let freeze = false;
 let gameSpeed = 1;
 let particlesArray = [];
 let ripplesArray = [];
-
 
 
 

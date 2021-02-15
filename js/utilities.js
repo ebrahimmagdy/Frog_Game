@@ -48,6 +48,14 @@ window.addEventListener('keyup', function(e) {
 function scored() {
     gameLevels++;
     gameSpeed += 2.5;
+    if(gameLevels == 1){
+        createObstaclesObjLevel1();
+    }else if(gameLevels == 2){
+        createObstaclesObjLevel2();
+    } 
+    lastScore = score;
+    coinsNumber = 5;
+    createCoins();
     frogger.x = canvas.width / 2 - frogger.width / 2;
     frogger.y = canvas.height - frogger.height - 40;
 
@@ -60,9 +68,43 @@ function handleScoreBoard() {
     ctx4.fillStyle = 'black';
     ctx4.strokeStyle = 'black';
     ctx4.font = '15px verdana';
-    ctx4.strokeText('Level', 265, 15);
+    ctx4.strokeText('Level', 500, 15);
     ctx4.font = '60px verdana';
-    ctx4.strokeText(gameLevels+1, 270, 65);
-  
+    ctx4.strokeText(gameLevels+1, 500, 65);
+    
+    ctx4.fillStyle = 'black';
+    ctx4.strokeStyle = 'black';
+    ctx4.font = '15px verdana';
+    ctx4.strokeText('Score', 50, 15);
+    ctx4.font = '60px verdana';
+    ctx4.strokeText(score, 50, 65);
 }
 
+function collision(first, second) {
+    return !(first.x > second.x + second.width ||
+        first.x + first.width < second.x ||
+        first.y > second.y + second.height ||
+        first.y + first.height < second.y
+    );
+}
+
+function resetGame() {
+    frogger.x = canvas.width / 2 - frogger.width / 2;
+    frogger.y = canvas.height - frogger.height - 40;
+    // if(gameLevels==0){
+    //     score = 0;
+    // }
+    // gameSpeed = 1;
+    coinsNumber = 5;
+    createCoins();
+    // if(score>0)
+    // {
+    //     score--;
+    // }
+    // else{
+    //     score=0;
+    // }
+    score = lastScore;
+    collisionsCount++;
+    freeze = false;
+}

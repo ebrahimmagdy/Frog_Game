@@ -1,5 +1,5 @@
 class Obstacle {
-    constructor(x, y, width, height, direction, type) {
+    constructor(x, y, width, height, direction, type, speed) {
 
         this.x = x;
         this.y = y;
@@ -7,6 +7,7 @@ class Obstacle {
         this.height = height;
         this.direction = direction;
         this.type = type;
+        this.speed = speed;
     }
     draw() {
         if (this.type == "turtle") {
@@ -25,7 +26,7 @@ class Obstacle {
 
     }
     update() {
-        this.x += this.direction * gameSpeed;
+        this.x += this.direction * this.speed;
         if (this.direction > 0) {
             if (this.x > canvasObs.width) {
                 this.x = 0 - this.width;
@@ -38,37 +39,33 @@ class Obstacle {
     }
 }
 
-function fillObstacles(arr, type, y, direction){
+function fillObstacles(arr, type, y, direction, speed){
     for (let i = 0; i < 2; i++) {
         let x = (i * (canvasObs.width / 2) + 50) + (Math.random() * ((canvasObs.width / 2) - 160));
-        arr.push(new Obstacle(x, y, 160, 60, direction, type));
+        arr.push(new Obstacle(x, y, 160, 60, direction, type, speed));
 
-    }
-}
-
-function createObstaclesObjLevel0() {
-    for(let i = 0; i < 5; i++){
-        fillObstacles(logsArray, waterArray[i], dimentionArray[i], direction[i]);
     }
 }
 createObstaclesObjLevel0();
-function createObstaclesObjLevel1() {
+function createObstaclesObjLevel0() {
     for(let i = 0; i < 5; i++){
-        fillObstacles(carsArray, landArray[i], dimentionArray[i], direction[i]);
+        fillObstacles(logsArray, waterArray[i], dimentionArray[i], direction[i], gameSpeed);
     }
 }
-createObstaclesObjLevel1();
-
-function createObstaclesObjLeve2() {
-    fillObstacles(logsArrayN, waterArray[1], dimentionArray[0], direction[1]);
-    fillObstacles(logsArrayN, waterArray[0], dimentionArray[1], direction[0]);
-    fillObstacles(carsArrayN, landArray[1], dimentionArray[2], direction[1]);
-    fillObstacles(carsArrayN, landArray[0], dimentionArray[3], direction[0]);
-    fillObstacles(carsArrayN, landArray[1], dimentionArray[4], direction[1]);
-    
+function createObstaclesObjLevel1() {
+    for(let i = 0; i < 5; i++){
+        fillObstacles(carsArray, landArray[i], dimentionArray[i], direction[i], gameSpeed);
+    }
 }
 
-createObstaclesObjLeve2();
+function createObstaclesObjLevel2() {
+    fillObstacles(logsArrayN, waterArray[1], dimentionArray[0], direction[1], gameSpeed + 1);
+    fillObstacles(logsArrayN, waterArray[0], dimentionArray[1], direction[0], gameSpeed - 4);
+    fillObstacles(carsArrayN, landArray[1], dimentionArray[2], direction[1], gameSpeed + 4);
+    carsArrayN.pop();
+    fillObstacles(carsArrayN, landArray[0], dimentionArray[3], direction[0], gameSpeed - 2);
+    fillObstacles(carsArrayN, landArray[1], dimentionArray[4], direction[1], gameSpeed - 4);
+}
 
 function handleObstacle() {
     if(gameLevels==0){
@@ -171,31 +168,5 @@ function handleObstacle() {
 
 }
 
-
-function collision(first, second) {
-    return !(first.x > second.x + second.width ||
-        first.x + first.width < second.x ||
-        first.y > second.y + second.height ||
-        first.y + first.height < second.y
-    );
-}
-
-function resetGame() {
-    frogger.x = canvas.width / 2 - frogger.width / 2;
-    frogger.y = canvas.height - frogger.height - 40;
-    // if(gameLevels==0){
-    //     score = 0;
-    // }
-    // gameSpeed = 1;
-    if(score>0)
-    {
-        score--;
-    }
-    else{
-        score=0;
-    }
-    collisionsCount++;
-    freeze = false;
-}
 
 

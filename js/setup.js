@@ -23,13 +23,19 @@ const ctx5 = canvas5.getContext('2d');
 canvas5.width = 600;
 canvas5.height = 600;
 
+//coins
+const coinCanvas = document.getElementById('coinCanvas');
+const ctxCoin = coinCanvas.getContext('2d');
+coinCanvas.width = 600;
+coinCanvas.height = 600;
+
 //obstacles
 const canvasObs = document.getElementById("canvasObstacle");
 const canvasObstacle = canvasObs.getContext("2d");
 canvasObs.width = 600;
 canvasObs.height = 600;
 
-
+//obstacles
 let turtleImg = document.getElementById("turtleImg");
 let wood = document.getElementById("wood");
 
@@ -52,6 +58,13 @@ let landArray = ["redCar", "truckCar", "redCar", "truckCar", "redCar"];
 let dimentionArray = [105, 180, 270, 345, 420];
 let direction = [1, -1, 1, -1, 1];
 //obstacles
+//coins
+let coinsArray=[];
+let coinsNumber=5;
+let lastScore = 0;
+const mycoin = new Image();
+mycoin.src = "../images/coin.png"
+//coins
 
 
 // global variables

@@ -1,14 +1,3 @@
-const coinCanvas = document.getElementById('coinCanvas');
-const ctxCoin = coinCanvas.getContext('2d');
-coinCanvas.width = 600;
-coinCanvas.height = 600;
-coinsArray=[];
-var count=0;
-
-const mycoin = new Image();
-mycoin.src = "../images/coin.png"
-
-
 class Coin{
     constructor(y)
     {
@@ -30,8 +19,8 @@ function draw(coinObj)
 
 function createCoins() {
     coinsArray = [];
-    clean(600, 600);
-    for(let i = 0; i < 5; i++){
+    cleanCoins(600, 600);
+    for(let i = 0; i < coinsNumber; i++){
         coinsArray.push(new Coin(dimentionArray[i]));
     }
 }
@@ -43,13 +32,13 @@ function handelCoins()
         draw(coinsArray[i]);
     }
     
-    //count++
+    //coinsNumber++
 
-    // if(count===5)
+    // if(coinsNumber===5)
     // {
-    //     clean(coinCanvas.width,coinCanvas.height)
+    //     cleanCoins(coinCanvas.width,coinCanvas.height)
     //     coinsArray=[]
-    //     count=0
+    //     coinsNumber=0
 
     // }
     
@@ -61,9 +50,9 @@ function handelCoins()
             score++;
             var xPois=coinsArray[i].width+coinsArray[i].x
             var yPois=coinsArray[i].height+coinsArray[i].y
-            clean(xPois,yPois)
+            cleanCoins(xPois,yPois)
             coinsArray.splice(i,1);
-            //count--;
+            coinsNumber--;
         }
             
     }
@@ -71,14 +60,13 @@ function handelCoins()
 
 }
 
-function clean(x,y)
+function cleanCoins(x,y)
 {
     ctxCoin.clearRect(0, 0,x, y)
-    console.log("clean");
-    
-
+    console.log("cleanCoinsCoins");
 }
-setInterval(createCoins, 5000);
+createCoins();
+let coinsInterval = setInterval(createCoins, 5000);
 
 
 

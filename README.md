@@ -9,6 +9,6 @@ A simple 2D frog game that contains 3 levels
 ## Contributors
 
 * [Ahmed Maher](https://github.com/Ahmed-Maher164)
-* [Ebrahim](https://github.com/ebrahimmagdy)
+* [Ibrahim](https://github.com/ebrahimmagdy)
 * [Noura](https://github.com/Noura98Houssien)
 * [Ahmed Samy](https://github.com/Ahmedsamymahrous)

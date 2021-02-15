@@ -12,8 +12,8 @@ mycoin.src = "../images/coin.png"
 class Coin{
     constructor()
     {
-        this.x=Math.floor((Math.random()*(coinCanvas.width-10))+10);
-        this.y=Math.floor((Math.random()*(coinCanvas.height-10))+10);
+        this.x=Math.floor((Math.random()*(coinCanvas.width-100))+100);
+        this.y=Math.floor((Math.random()*(coinCanvas.height-100))+100);
         this.width=50;
         this.height=50;
      

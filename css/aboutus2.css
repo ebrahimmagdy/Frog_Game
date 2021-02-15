@@ -1,0 +1,74 @@
+body{
+	background-image: url('../images/1264.jpg');
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	font:600 16px/18px 'Open Sans',sans-serif;
+    text-align: center;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  max-height: 470px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  display: inline-block;
+  margin-top: 5%;
+  margin-left:30px;
+}
+
+.title {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(70, 203, 24);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.fa-linkedin
+{
+    float:left;
+    padding-left: 50px; 
+    padding-bottom: 10px;
+}
+.fa-facebook
+{
+    float:right;
+    padding-right: 50px;
+}
+
+h2{
+    font-size: 50px;
+    text-shadow:20px 10px 10px rgb(70, 203, 24); 
+    -webkit-text-stroke: .5px black;
+}
+
+img
+{
+    height: 300px;
+}

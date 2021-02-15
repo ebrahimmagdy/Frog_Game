@@ -8,16 +8,16 @@ body{
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  max-height: 470px;
+  max-height: 473px;
   margin: auto;
   text-align: center;
   font-family: arial;
   display: inline-block;
-  margin-top: 5%;
-  margin-left:30px;
+  margin-top: 2%;
+  margin-left:10px;
 }
 
 .title {

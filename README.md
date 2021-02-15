@@ -3,7 +3,7 @@ A simple 2D frog game that contains 3 levels
 ## Features
 * You can choose a frog charachter (Shicko - Bigo - Figo).
 * There are three levels (Easy - Medium - Hard)
-* You can login & signup page with validation.
+* You can login & signup (with validation).
 * While the game you can collect coins.
 ## Prerequisites
 * Love froggers

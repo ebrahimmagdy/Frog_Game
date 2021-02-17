@@ -12,6 +12,9 @@ A simple 2D frog game that contains 3 levels
 ## How to play
 Use the arrow keys on your keyboard to move your frog
 
+## Try it now!
+[Live demo](https://forg-game-js.herokuapp.com/index.html)
+
 ## Contributors
 
 * [Ahmed Maher](https://github.com/Ahmed-Maher164)
